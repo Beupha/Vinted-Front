@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.formSignUp {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 80vw;
+  max-width: 500px;
+  min-width: 250px;
+  padding: 10px;
+  margin: auto;
+}
+
+.buttonInscrire {
+  background-color: #3e9c9a;
+  color: #fff;
+  border-radius: 10px;
+  border: rgb(164, 138, 138) 1px solid;
+  height: 40px;
+  width: 20vw;
+  min-width: 150px;
+  margin: auto;
+}
+
+.modal {
+  color: #3e9c9a;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  cursor: pointer;
+}

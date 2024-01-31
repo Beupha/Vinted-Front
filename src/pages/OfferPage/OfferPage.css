@@ -1,0 +1,17 @@
+.offerPage {
+  padding: 30px;
+}
+
+.offerPage > div {
+  display: flex;
+  gap: 20px;
+}
+
+.offerPage img {
+  width: auto;
+  height: 400px;
+}
+
+.detail {
+  padding: 10px;
+}
