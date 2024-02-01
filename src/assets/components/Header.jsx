@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 export default function Header({ token, setToken }) {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    token ? navigate("/Publish") : navigate("/SignUp");
+  }
+
   return (
     <>
       <div className="header">
@@ -34,8 +40,12 @@ export default function Header({ token, setToken }) {
           )}
         </nav>
 
-        <button>Poster une annonce</button>
+        <button onClick={handleClick}>Poster une annonce</button>
       </div>
     </>
   );
+}
+
+{
+  /* <Link to="/publish">Poster une annonce</Link> */
 }

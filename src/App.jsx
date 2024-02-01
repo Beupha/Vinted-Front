@@ -10,6 +10,7 @@ import Header from "./assets/components/Header";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import ModalConnect from "./assets/components/ModalConnect";
+import Publish from "./pages/Publish/Publish";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || "");
@@ -40,6 +41,7 @@ function App() {
               />
             }
           />
+          <Route path="/publish" element={<Publish />}></Route>
         </Routes>
 
         {displayModalConnect && (
