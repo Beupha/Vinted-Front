@@ -20,7 +20,7 @@ export default function SignupPage({ setToken, setDisplayModalConnect }) {
     try {
       if (username && email && password) {
         const { data } = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+          "https://site--vinted-back--fzydy6yrfhrj.code.run/user/signup",
           {
             username,
             email,

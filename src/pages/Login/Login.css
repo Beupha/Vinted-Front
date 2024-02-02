@@ -32,3 +32,8 @@ h1 {
   margin: auto;
   max-width: 400px;
 }
+
+.errorPassword {
+  text-align: center;
+  color: rgb(106, 7, 7);
+}

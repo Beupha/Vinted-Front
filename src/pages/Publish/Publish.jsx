@@ -35,7 +35,7 @@ function App() {
         }
 
         const { data } = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+          "https://site--vinted-back--fzydy6yrfhrj.code.run/offer/publish",
           formData,
           {
             headers: {
@@ -182,9 +182,6 @@ function App() {
             }}
           />
         </label>
-        {/* -- Autre syntaxe pour lier l'input à son 'label' */}
-        {/* <label htmlFor="image">Image :</label>
-        <input type="file" name="image" id="image" /> */}
 
         {/* -- Affichage d'une preview de l'image avant de faire la requête */}
         {image && <img src={URL.createObjectURL(image)} alt="" />}
@@ -204,7 +201,7 @@ function App() {
         </label>
 
         <button>Envoyer</button>
-        {errorMessage && <p>{errorMessage}</p>}
+        {errorMessage && <p className="errorOffer">{errorMessage}</p>}
       </form>
     </main>
   );

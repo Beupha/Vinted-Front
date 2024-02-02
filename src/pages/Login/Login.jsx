@@ -10,6 +10,7 @@ export default function Login({ setToken, setDisplayModalInscription }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
 
   const navigate = useNavigate();
 
@@ -17,11 +18,10 @@ export default function Login({ setToken, setDisplayModalInscription }) {
     event.preventDefault();
 
     try {
-      if (username && email && password) {
+      if (email && password) {
         const { data } = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/login",
+          "https://site--vinted-back--fzydy6yrfhrj.code.run/user/login",
           {
-            username,
             email,
             password,
           }
@@ -34,7 +34,8 @@ export default function Login({ setToken, setDisplayModalInscription }) {
         setErrorMessage("Veuillez remplir tous les champs");
       }
     } catch (error) {
-      console.log("Signpage error ->", error.response);
+      setErrorPassword("Accès refusé, veuillez réessayer");
+      console.log("error.response->", error.response);
     }
   };
 
@@ -43,18 +44,6 @@ export default function Login({ setToken, setDisplayModalInscription }) {
       <h1>Se connecter</h1>
 
       <form onSubmit={handleSubmit} className="formLogin">
-        <input
-          type="text"
-          name="usesername"
-          id="username"
-          placeholder="Nom d'utilisateur"
-          value={username}
-          onChange={(event) => {
-            setErrorMessage("");
-            setUsername(event.target.value);
-          }}
-        />
-
         <input
           type="email"
           name="email"
@@ -75,6 +64,7 @@ export default function Login({ setToken, setDisplayModalInscription }) {
           value={password}
           onChange={(event) => {
             setErrorMessage("");
+            setErrorPassword("");
             setPassword(event.target.value);
           }}
         />
@@ -93,6 +83,10 @@ export default function Login({ setToken, setDisplayModalInscription }) {
       >
         Pas encore de compte ? Inscrivez-vous !
       </Link>
+
+      <div className="errorPassword">
+        {errorPassword && <p>{errorPassword}</p>}
+      </div>
     </main>
   );
 }

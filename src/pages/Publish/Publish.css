@@ -25,3 +25,7 @@ input {
   width: 50vw;
   height: 150px;
 }
+
+.errorOffer {
+  padding-bottom: 20px;
+}
