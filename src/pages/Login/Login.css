@@ -1,3 +1,19 @@
+/* LOGIN + SIGNUP CSS */
+
+.modal {
+  color: #3e9c9a;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
 /* LOGIN CSS */
 
 .buttonConnecter {
@@ -19,5 +35,5 @@
 
 .errorPassword {
   text-align: center;
-  color: rgb(106, 7, 7);
+  color: rgb(53, 8, 8);
 }
