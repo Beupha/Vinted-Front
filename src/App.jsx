@@ -32,15 +32,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="/login"
-            element={
-              <Login
-                setToken={setToken}
-                setDisplayModalConnect={setDisplayModalConnect}
-              />
-            }
-          />
+          <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/publish" element={<Publish />}></Route>
         </Routes>
 

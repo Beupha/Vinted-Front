@@ -74,13 +74,7 @@ export default function Login({ setToken, setDisplayModalInscription }) {
         {errorMessage && <p>{errorMessage}</p>}
       </form>
 
-      <Link
-        to="/SignUp"
-        className="modal"
-        onClick={() => {
-          setDisplayModalInscription(true);
-        }}
-      >
+      <Link to="/Signup" className="modal">
         Pas encore de compte ? Inscrivez-vous !
       </Link>
 
