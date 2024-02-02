@@ -1,19 +1,20 @@
+/* LOGIN + SIGNUP CSS */
+
+.modal {
+  color: #3e9c9a;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
 h1 {
   text-align: center;
   padding: 10px;
   font-size: 20px;
 }
 
-.formLogin {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 80vw;
-  max-width: 500px;
-  min-width: 250px;
-  padding: 10px;
-  margin: auto;
-}
+/* LOGIN CSS */
 
 .buttonConnecter {
   background-color: #3e9c9a;
@@ -23,13 +24,11 @@ h1 {
   height: 40px;
   width: 20vw;
   min-width: 150px;
+  max-width: 250px;
   margin: auto;
 }
 
-.modal {
-  color: #3e9c9a;
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  cursor: pointer;
+.formLogin input {
+  margin: auto;
+  max-width: 400px;
 }

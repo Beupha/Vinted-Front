@@ -1,20 +1,3 @@
-h1 {
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.formSignUp {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 80vw;
-  max-width: 500px;
-  min-width: 250px;
-  padding: 10px;
-  margin: auto;
-}
-
 .buttonInscrire {
   background-color: #3e9c9a;
   color: #fff;
@@ -23,13 +6,21 @@ h1 {
   height: 40px;
   width: 20vw;
   min-width: 150px;
+  max-width: 250px;
   margin: auto;
 }
 
-.modal {
-  color: #3e9c9a;
+.formSignUp :not(:last-child) {
+  margin: auto;
+  max-width: 400px;
+}
+
+.newsletter {
   display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  cursor: pointer;
+  align-items: center;
+  margin: auto;
+}
+
+.newsletter :first-child {
+  width: 650px;
 }

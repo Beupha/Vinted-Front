@@ -41,6 +41,7 @@ export default function ModalConnect({ setDisplayModalConnect }) {
 
         <form onSubmit={handleSubmit}>
           <input
+            className="inputModal"
             placeholder="Email"
             type="text"
             name="email"
@@ -48,6 +49,7 @@ export default function ModalConnect({ setDisplayModalConnect }) {
             onChange={handleEmailChange}
           />
           <input
+            className="inputModal"
             placeholder="Password"
             type="password"
             name="password"

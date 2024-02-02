@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
@@ -11,6 +9,8 @@ import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import ModalConnect from "./assets/components/ModalConnect";
 import Publish from "./pages/Publish/Publish";
+
+import "./App.css";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || "");

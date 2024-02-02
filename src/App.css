@@ -31,7 +31,7 @@ a {
 .modalConnect > div {
   background-color: #fff;
   width: 40vw;
-  height: 25vh;
+  height: auto;
   padding: 20px;
 }
 
@@ -40,6 +40,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 30vw;
+  margin: auto;
 }
 
 .modalConnect input {
@@ -54,6 +56,7 @@ a {
   border: rgb(164, 138, 138) 1px solid;
   height: 40px;
   width: 20vw;
+  max-width: 250px;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -68,4 +71,10 @@ a {
   color: #3e9c9a;
   display: flex;
   justify-content: center;
+}
+
+.inputModal {
+  width: 30vw;
+  max-width: 400px;
+  margin: auto;
 }

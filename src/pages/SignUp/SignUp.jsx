@@ -81,7 +81,9 @@ export default function SignupPage({ setToken, setDisplayModalConnect }) {
           }}
         />
         <div className="newsletter">
+          <label htmlFor="newsletter">S'inscrire à la newsletter</label>
           <input
+            className="checkbox"
             type="checkbox"
             name="newsletter"
             id="newsletter"
@@ -91,7 +93,6 @@ export default function SignupPage({ setToken, setDisplayModalConnect }) {
               setNewsletter(!newsletter);
             }}
           />
-          <label htmlFor="newsletter">S'inscrire à la newsletter</label>
         </div>
 
         <button className="buttonInscrire">S'inscrire</button>
