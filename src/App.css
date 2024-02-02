@@ -1,4 +1,6 @@
-a {
+/* GENERAL */
+
+.header {
   color: inherit;
   text-decoration: none;
 }
@@ -13,6 +15,22 @@ a {
 .headerDetail {
   display: flex;
   gap: 50px;
+}
+
+/* LOGIN + SIGNUP CSS */
+
+.modal {
+  color: #3e9c9a;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
 }
 
 /* MODAL CONNECTION */
