@@ -19,11 +19,11 @@ const CheckOutForm = ({ token, title, price, chargeObject }) => {
     const stripeResponse = await stripe.createToken(cardElement, {
       name: token,
     });
-    console.log("stripeResponse -->", stripeResponse);
+    // console.log("stripeResponse -->", stripeResponse);
 
     const stripeToken = stripeResponse.token.id;
 
-    console.log("stripeToken -->", stripeToken);
+    // console.log("stripeToken -->", stripeToken);
 
     const response = await axios.post("http://127.0.0.1:3000/payment", {
       token: stripeToken,

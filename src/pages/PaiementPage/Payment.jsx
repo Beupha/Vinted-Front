@@ -29,12 +29,12 @@ function Payment({ token }) {
           <p className="priceTotal">TOTAL :{totalPrice}€</p>
 
           <Elements stripe={stripePromise}>
-            {<CheckOutForm token={token} title={title} price={price} />}
+            {<CheckOutForm token={token} title={title} price={totalPrice} />}
           </Elements>
         </div>
       </div>
     ) : (
-      <Navigate to="/" />
+      <Navigate to="/login" />
     );
   }
 }
