@@ -19,21 +19,17 @@ const CheckOutForm = ({ token, title, totalPrice }) => {
     const stripeResponse = await stripe.createToken(cardElement, {
       name: token,
     });
-    // console.log("stripeResponse -->", stripeResponse);
 
     const stripeToken = stripeResponse.token.id;
 
-    // console.log("stripeToken -->", stripeToken);
-
-    console.log("totalPrice -->", totalPrice);
-
-    console.log("price -->", price);
-
-    const response = await axios.post("http://127.0.0.1:3000/payment", {
-      token: stripeToken,
-      title: title,
-      amount: totalPrice,
-    });
+    const response = await axios.post(
+      "https://site--vinted-back--fzydy6yrfhrj.code.run/payment",
+      {
+        token: stripeToken,
+        title: title,
+        amount: totalPrice,
+      }
+    );
     console.log("response.data -->", response.data);
 
     if (response.data.status === "succeeded") {
