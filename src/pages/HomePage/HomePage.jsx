@@ -11,7 +11,9 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:3000/offers");
+        const response = await axios.get(
+          "https://site--vinted-back--fzydy6yrfhrj.code.run/offers"
+        );
 
         setOffersList(response.data);
         {

@@ -19,7 +19,9 @@ export default function OfferPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`http://127.0.0.1:3000/offer/${id}`);
+        const { data } = await axios.get(
+          `https://site--vinted-back--fzydy6yrfhrj.code.run/offer/${id}`
+        );
         console.log("Offerpage - data>>", data);
 
         setOffer(data);
