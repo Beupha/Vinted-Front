@@ -7,7 +7,7 @@ import { useLocation, Navigate } from "react-router-dom";
 import CheckOutForm from "../../assets/components/CheckOutForm";
 
 const stripePromise = loadStripe(
-  "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
+  "pk_test_51Ofiz3KFr646Y3mJKDqatKtYbKlKWc4QiJD9y2TmNr9IqeNwba1dT5j1Xc07s4NR0E8K7XYBCiXlxKySOyolAWwN00kI80ErZv"
 );
 
 function Payment({ token }) {
