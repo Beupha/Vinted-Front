@@ -17,8 +17,8 @@ function Payment({ token }) {
   const shippingFees = 5;
   const totalPrice = price + shippingFees;
 
-  return token ? (
-    stripePromise && (
+  if (stripePromise) {
+    return token ? (
       <div className="payment">
         <div className="payment-container">
           <h1>Valider votre commande</h1>
@@ -33,10 +33,10 @@ function Payment({ token }) {
           </Elements>
         </div>
       </div>
-    )
-  ) : (
-    <Navigate to="/" />
-  );
+    ) : (
+      <Navigate to="/" />
+    );
+  }
 }
 
 export default Payment;
