@@ -6,6 +6,10 @@ import Cookies from "js-cookie";
 export default function ModalConnect({ setDisplayModalConnect }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -17,10 +21,30 @@ export default function ModalConnect({ setDisplayModalConnect }) {
     setPassword(value);
   };
 
-  const handleSubmit = (event) => {
-    console.log(email, password);
+  const handleSubmit = async (event) => {
     setDisplayModalConnect(false);
     event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
+
+    try {
+      if (email && password) {
+        const { data } = await axios.post(
+          "https://site--vinted-back--fzydy6yrfhrj.code.run/user/login",
+          {
+            email,
+            password,
+          }
+        );
+
+        Cookies.set("userToken", data.token, { secure: true });
+        setToken(data.token);
+        navigate("/");
+      } else {
+        setErrorMessage("Veuillez remplir tous les champs");
+      }
+    } catch (error) {
+      setErrorPassword("Accès refusé, veuillez réessayer");
+      console.log("error.response->", error.response);
+    }
   };
 
   return (
@@ -56,9 +80,13 @@ export default function ModalConnect({ setDisplayModalConnect }) {
             value={password}
             onChange={handlePasswordChange}
           />
+
           <input type="submit" value="Se Connecter" />
         </form>
-
+        {/* {errorMessage && <p>{errorMessage}</p>}
+        <div className="errorPassword">
+          {errorPassword && <p>{errorPassword}</p>}
+        </div> */}
         <Link
           to="/signup"
           className="link"

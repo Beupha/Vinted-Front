@@ -33,7 +33,7 @@ function App() {
             }
           />
           <Route path="/login" element={<Login setToken={setToken} />} />
-          <Route path="/publish" element={<Publish />}></Route>
+          <Route path="/publish" element={<Publish token={token} />}></Route>
         </Routes>
 
         {displayModalConnect && (

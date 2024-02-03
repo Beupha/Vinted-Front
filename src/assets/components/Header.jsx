@@ -24,6 +24,7 @@ export default function Header({ token, setToken }) {
               onClick={() => {
                 Cookies.remove("userToken");
                 setToken("");
+                navigate("/");
               }}
             >
               Se déconnecter

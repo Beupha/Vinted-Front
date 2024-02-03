@@ -23,23 +23,32 @@ function App() {
     try {
       if (title && price && description) {
         // FormData pour envoyer les fichiers via une requête
+
         const formData = new FormData();
+
         formData.append("title", title);
+        formData.append("description", description);
+        formData.append("price", price);
+        formData.append("condition", condition);
+        formData.append("city", city);
+        formData.append("brand", brand);
+        formData.append("size", size);
+        formData.append("color", color);
         formData.append("image", image);
 
         // Pour insérer plusieurs photos à la même clé du formData
-        for (const key in images) {
-          if (Object.hasOwnProperty.call(images, key)) {
-            formData.append("images", images[key]);
-          }
-        }
+        // for (const key in images) {
+        //   if (Object.hasOwnProperty.call(images, key)) {
+        //     formData.append("images", images[key]);
+        //   }
+        // }
 
         const { data } = await axios.post(
           "https://site--vinted-back--fzydy6yrfhrj.code.run/offer/publish",
           formData,
           {
             headers: {
-              Authorization: "Bearer ${token}",
+              Authorization: `Bearer ${token}`,
               "Content-Type": "multipart/form-data",
             },
           }
@@ -52,7 +61,8 @@ function App() {
         );
       }
     } catch (error) {
-      console.log("catch>>>'", error);
+      console.log("data>>>", data);
+      console.log("catch>>>'", error.response);
     }
   };
 
@@ -186,7 +196,7 @@ function App() {
         {/* -- Affichage d'une preview de l'image avant de faire la requête */}
         {image && <img src={URL.createObjectURL(image)} alt="" />}
 
-        <label>
+        {/* <label>
           Plusieurs images :
           <input
             type="file"
@@ -198,9 +208,9 @@ function App() {
               setImages(event.target.files);
             }}
           />
-        </label>
+        </label> */}
 
-        <button>Envoyer</button>
+        <button className="send">Envoyer</button>
         {errorMessage && <p className="errorOffer">{errorMessage}</p>}
       </form>
     </main>

@@ -5,8 +5,7 @@ import Cookies from "js-cookie";
 
 import "./Login.css";
 
-export default function Login({ setToken, setDisplayModalInscription }) {
-  const [username, setUsername] = useState("");
+export default function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
