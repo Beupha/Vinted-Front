@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 import "./Publish.css";
 
@@ -18,6 +19,8 @@ function App() {
   const [images, setImages] = useState({});
 
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [token, setToken] = useState();
 
   const navigate = useNavigate();
 

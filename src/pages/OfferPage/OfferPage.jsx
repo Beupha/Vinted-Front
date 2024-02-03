@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import "./OfferPage.css";
@@ -55,6 +56,10 @@ export default function OfferPage() {
               );
             })}
           </div>
+
+          <Link to="/pay" className="buyButton">
+            J'achète !
+          </Link>
         </div>
       </div>
     </main>

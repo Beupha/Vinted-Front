@@ -3,6 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 import React, { useEffect, useState } from "react";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 import HomePage from "./pages/HomePage/HomePage";
 import OfferPage from "./pages/OfferPage/OfferPage";
@@ -11,6 +13,12 @@ import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import ModalConnect from "./assets/components/ModalConnect";
 import Publish from "./pages/Publish/Publish";
+import Pay from "./pages/PaiementPage/Pay";
+// import CheckoutForm from "./components/CheckoutForm";
+
+// const stripePromise = loadStripe(
+//   "key"
+// );
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || "");
@@ -34,6 +42,7 @@ function App() {
           />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/publish" element={<Publish token={token} />}></Route>
+          <Route path="/pay" element={<Pay token={token} />}></Route>
         </Routes>
 
         {displayModalConnect && (
