@@ -22,7 +22,7 @@ export default function OfferPage() {
         const { data } = await axios.get(
           `https://site--vinted-back--fzydy6yrfhrj.code.run/offer/${id}`
         );
-        console.log("Offerpage - data>>", data);
+        // console.log("Offerpage - data>>", data);
 
         setOffer(data);
       } catch (error) {
@@ -39,7 +39,7 @@ export default function OfferPage() {
     <p>Loading...</p>
   ) : (
     <main className="offerPage">
-      {console.log("offer -->", offer)}
+      {/* {console.log("offer -->", offer)} */}
       <div>
         <img src={offer.product_image.secure_url} alt="" />
 
