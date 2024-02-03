@@ -14,9 +14,6 @@ const CheckOutForm = ({ token, title, price }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const stripePromise = loadStripe(
-      "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
-    );
     const cardElement = elements.getElement(CardElement);
 
     const stripeResponse = await stripe.createToken(cardElement, {

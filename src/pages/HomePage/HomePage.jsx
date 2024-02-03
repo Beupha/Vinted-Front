@@ -16,9 +16,6 @@ export default function HomePage() {
         );
 
         setOffersList(response.data);
-        {
-          // console.log(response.data);
-        }
       } catch (error) {
         console.log("HomePage - catch>>", error.response);
       }
@@ -40,16 +37,15 @@ export default function HomePage() {
               key={offer._id}
               className="offerCard"
             >
-              {/* {console.log("offer -->", offer)} */}
+              {/* {console.log(offer)} */}
               {/* <div className="avatarAndName"> */}
               {/* {offer.owner.account.avatar && (
                   <img src={offer.owner.account.avatar.secure_url} alt="" />
                 )} */}
               {/* <span className="accountName">{offer.owner}</span> */}
+              <span className="offerName">{offer.product_name}</span>
               {/* </div> */}
-
               <img src={offer.product_image.secure_url} alt="" />
-
               <p className="price">
                 {offer.product_price.toFixed(2).toString().replace(".", ",")} €
               </p>
