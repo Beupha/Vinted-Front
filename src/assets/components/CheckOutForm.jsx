@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./CheckOutForm.css";
 
-const CheckOutForm = ({ token, title, price, chargeObject }) => {
+const CheckOutForm = ({ token, title, totalPrice, chargeObject }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -28,7 +28,7 @@ const CheckOutForm = ({ token, title, price, chargeObject }) => {
     const response = await axios.post("http://127.0.0.1:3000/payment", {
       token: stripeToken,
       title: title,
-      amount: price,
+      amount: totalPrice,
     });
     console.log("response.data -->", response.data);
 
