@@ -10,6 +10,7 @@
 .offerPage img {
   width: auto;
   height: 400px;
+  max-height: 50vh;
 }
 
 .detail {

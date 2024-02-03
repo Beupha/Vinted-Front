@@ -12,17 +12,19 @@ export default function OfferPage() {
   // -- Récupération de l'id
   const { id } = useParams();
 
+  // {
+  //   console.log("ID -->", id);
+  // }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-        );
-        // console.log("Offerpage - datat>>", data);
+        const { data } = await axios.get(`http://127.0.0.1:3000/offer/${id}`);
+        console.log("Offerpage - data>>", data);
 
         setOffer(data);
       } catch (error) {
-        console.log("OfferPAge - catch >>", error.response);
+        console.log("OfferPage - catch >>", error.response);
       }
 
       setIsLoading(false);
@@ -35,8 +37,9 @@ export default function OfferPage() {
     <p>Loading...</p>
   ) : (
     <main className="offerPage">
+      {console.log("offer -->", offer)}
       <div>
-        <img src={offer.product_picture.secure_url} alt="" />
+        <img src={offer.product_image.secure_url} alt="" />
 
         <div>
           <p className="price">{offer.product_price} €</p>

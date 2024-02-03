@@ -11,11 +11,12 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
-        );
+        const response = await axios.get("http://127.0.0.1:3000/offers");
 
-        setOffersList(response.data.offers);
+        setOffersList(response.data);
+        {
+          console.log(response.data);
+        }
       } catch (error) {
         console.log("HomePage - catch>>", error.response);
       }
@@ -37,14 +38,13 @@ export default function HomePage() {
               key={offer._id}
               className="offerCard"
             >
-              <div className="avatarAndName">
-                {offer.owner.account.avatar && (
+              {/* {console.log("offer -->", offer)} */}
+              {/* <div className="avatarAndName"> */}
+              {/* {offer.owner.account.avatar && (
                   <img src={offer.owner.account.avatar.secure_url} alt="" />
-                )}
-                <span className="accountName">
-                  {offer.owner.account.username}
-                </span>
-              </div>
+                )} */}
+              <span className="accountName">{offer.owner}</span>
+              {/* </div> */}
 
               <img src={offer.product_image.secure_url} alt="" />
 
