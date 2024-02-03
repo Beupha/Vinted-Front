@@ -62,7 +62,11 @@ export default function OfferPage() {
             })}
           </div>
 
-          <Link to="/pay" className="buyButton">
+          <Link
+            to="/payment"
+            state={{ title: offer.product_name, price: offer.product_price }}
+            className="buyButton"
+          >
             J'achète !
           </Link>
         </div>

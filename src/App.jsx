@@ -11,7 +11,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import ModalConnect from "./assets/components/ModalConnect";
 import Publish from "./pages/Publish/Publish";
-import Pay from "./pages/PaiementPage/Pay";
+import Payment from "./pages/PaiementPage/Payment";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || "");
@@ -35,7 +35,7 @@ function App() {
           />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/publish" element={<Publish token={token} />}></Route>
-          <Route path="/pay" element={<Pay token={token} />}></Route>
+          <Route path="/payment" element={<Payment token={token} />}></Route>
         </Routes>
 
         {displayModalConnect && (

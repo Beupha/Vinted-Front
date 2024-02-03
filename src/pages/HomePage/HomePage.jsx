@@ -17,7 +17,7 @@ export default function HomePage() {
 
         setOffersList(response.data);
         {
-          console.log(response.data);
+          // console.log(response.data);
         }
       } catch (error) {
         console.log("HomePage - catch>>", error.response);
@@ -45,7 +45,7 @@ export default function HomePage() {
               {/* {offer.owner.account.avatar && (
                   <img src={offer.owner.account.avatar.secure_url} alt="" />
                 )} */}
-              <span className="accountName">{offer.owner}</span>
+              {/* <span className="accountName">{offer.owner}</span> */}
               {/* </div> */}
 
               <img src={offer.product_image.secure_url} alt="" />
