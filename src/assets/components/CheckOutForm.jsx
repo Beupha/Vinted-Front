@@ -20,7 +20,6 @@ const CheckOutForm = ({ token, title, price, chargeObject }) => {
       name: "Moi",
     });
     console.log("stripeResponse -->", stripeResponse);
-    console.log("chargeObject ->", chargeObject);
 
     const stripeToken = stripeResponse.token.id;
 
@@ -29,7 +28,7 @@ const CheckOutForm = ({ token, title, price, chargeObject }) => {
       title: title,
       amount: price,
     });
-    console.log("response.data=", response.data);
+    console.log("response.data -->", response.data);
 
     if (response.data.status === "succeeded") {
       setCompleted(true);
