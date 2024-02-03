@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./CheckOutForm.css";
 
-const CheckOutForm = ({ token, title, price }) => {
+const CheckOutForm = ({ token, title, price, chargeObject }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -20,6 +20,7 @@ const CheckOutForm = ({ token, title, price }) => {
       name: "Moi",
     });
     console.log("stripeResponse -->", stripeResponse);
+    console.log("chargeObject ->", chargeObject);
 
     const stripeToken = stripeResponse.token.id;
 
