@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 
 import "./Publish.css";
 
-function App() {
+function Publish({ token }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -15,12 +15,10 @@ function App() {
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
 
-  const [image, setImage] = useState(null);
-  const [images, setImages] = useState({});
+  const [picture, setPicture] = useState(null);
+  const [pictures, setPictures] = useState({});
 
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [token, setToken] = useState();
 
   const navigate = useNavigate();
 
@@ -41,8 +39,9 @@ function App() {
         formData.append("brand", brand);
         formData.append("size", size);
         formData.append("color", color);
-        formData.append("image", image);
+        formData.append("picture", picture);
 
+        console.log(token);
         // pour visualiser le contenu de notre formData : (boucle for of)
         for (let pair of formData.entries()) {
           console.log(pair[0] + ", " + pair[1]);
@@ -193,20 +192,20 @@ function App() {
         </label>
 
         <label>
-          Image :
+          Photo :
           <input
             type="file"
-            name="image"
-            id="image"
+            name="picture"
+            id="picture"
             onChange={(event) => {
               // console.log(event.target.files);
-              setImage(event.target.files[0]);
+              setPicture(event.target.files[0]);
             }}
           />
         </label>
 
         {/* -- Affichage d'une preview de l'image avant de faire la requête */}
-        {image && <img src={URL.createObjectURL(image)} alt="" />}
+        {picture && <img src={URL.createObjectURL(picture)} alt="" />}
 
         {/* <label>
           Plusieurs images :
@@ -229,4 +228,4 @@ function App() {
   );
 }
 
-export default App;
+export default Publish;

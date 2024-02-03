@@ -36,7 +36,7 @@ export default function OfferPage() {
   ) : (
     <main className="offerPage">
       <div>
-        <img src={offer.product_image.secure_url} alt="" />
+        <img src={offer.product_picture.secure_url} alt="" />
 
         <div>
           <p className="price">{offer.product_price} €</p>
