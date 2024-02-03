@@ -1,6 +1,8 @@
 import { useState } from "react";
-import "./Publish.css";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+
+import "./Publish.css";
 
 function App() {
   const [title, setTitle] = useState("");
@@ -16,6 +18,8 @@ function App() {
   const [images, setImages] = useState({});
 
   const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -36,6 +40,11 @@ function App() {
         formData.append("color", color);
         formData.append("image", image);
 
+        // pour visualiser le contenu de notre formData : (boucle for of)
+        for (let pair of formData.entries()) {
+          console.log(pair[0] + ", " + pair[1]);
+        }
+
         // Pour insérer plusieurs photos à la même clé du formData
         // for (const key in images) {
         //   if (Object.hasOwnProperty.call(images, key)) {
@@ -55,13 +64,13 @@ function App() {
         );
 
         console.log("data>>>", data);
+        navigate("/");
       } else {
         setErrorMessage(
           "Veuillez mettre au minimum un titre, une description et un prix"
         );
       }
     } catch (error) {
-      console.log("data>>>", data);
       console.log("catch>>>'", error.response);
     }
   };
