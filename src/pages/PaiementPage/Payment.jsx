@@ -18,20 +18,22 @@ function Payment({ token }) {
   const totalPrice = price + shippingFees;
 
   return token ? (
-    <div className="payment">
-      <div className="payment-container">
-        <h1>Valider votre commande</h1>
+    stripePromise && (
+      <div className="payment">
+        <div className="payment-container">
+          <h1>Valider votre commande</h1>
 
-        <p>Nom de l'annonce : {title}</p>
-        <p>Prix de l'objet : {price}€</p>
-        <p>Frais de port :{shippingFees}€</p>
-        <p className="priceTotal">TOTAL :{totalPrice}€</p>
+          <p>Nom de l'annonce : {title}</p>
+          <p>Prix de l'objet : {price}€</p>
+          <p>Frais de port :{shippingFees}€</p>
+          <p className="priceTotal">TOTAL :{totalPrice}€</p>
 
-        <Elements stripe={stripePromise}>
-          {<CheckOutForm token={token} title={title} price={price} />}
-        </Elements>
+          <Elements stripe={stripePromise}>
+            {<CheckOutForm token={token} title={title} price={price} />}
+          </Elements>
+        </div>
       </div>
-    </div>
+    )
   ) : (
     <Navigate to="/" />
   );
