@@ -31,6 +31,11 @@ const CheckOutForm = ({ token, title, price }) => {
 
     if (response.data.status === "succeeded") {
       setCompleted(true);
+    } else {
+      setErrorMessage(response.data.status);
+      {
+        errorMessage && <p className="errorPayment">{errorMessage}</p>;
+      }
     }
   };
 
@@ -39,7 +44,7 @@ const CheckOutForm = ({ token, title, price }) => {
       {!completed ? (
         <form onSubmit={handleSubmit}>
           <CardElement />
-          <button type="submit">Pay</button>
+          <button type="submit">Payer</button>
         </form>
       ) : (
         <span>Paiement effectué!</span>
